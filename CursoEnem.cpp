@@ -99,9 +99,12 @@ void CursoEnem::printSaida(){
         cout<<"\nNumero de materia castradas: " <<  getNumMateriasCad();
         cout<<"\nNome do Professor: "<< getNomeProfessor();
         cout<<"\nNumero de Materiais Didaticos: "<< NUMMATERIALDIDATICO;
-        cout<<"\nNota de corte no Enem: "<< getNotaCorte() <<"\n\n";
+        cout<<"\nNota de corte no Enem: "<< getNotaCorte();
+        cout<<"\nHistorico de Atividades: \n";
+        printHistAt();
 
-        cout<<"Materias de "<<getNomeDisciplina()<<" do professor " <<getNomeProfessor()<<": \n\n";
+
+        cout<<"\nMaterias de "<<getNomeDisciplina()<<" do professor " <<getNomeProfessor()<<": \n\n";
         
         printMaterias();
 

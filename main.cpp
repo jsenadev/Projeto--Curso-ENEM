@@ -6,6 +6,8 @@ int main(){
     int esc1;
     int esc2;
 
+       
+
     cout<<"======= SISTEMA DE INFORMAÇÕES DO CURSO ENEM =======\n\n";
     cout<<"Escolha uma Disciplina: ";
     cout<<"\n[1] - Portugues\n[2] - Matematica\n[3] - Biologia\n[4] - Sair";
@@ -14,7 +16,7 @@ int main(){
 
     if(esc1 == 1){
         // DECLARAÇÃO DA MATERIA PORTUGUES
-        CursoEnem *portuguesPtr;
+        CursoEnem *portuguesPtr; // Criação de ponteiro para alocação de memória
         
 
         vector< string *> materiasPort;

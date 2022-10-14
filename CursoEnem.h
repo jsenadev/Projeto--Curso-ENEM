@@ -31,6 +31,7 @@ class CursoEnem{
     public:
 
     CursoEnem();
+    CursoEnem(int);
     CursoEnem(string, string, int = 0, int = 0, float = 0.0);
     ~CursoEnem(); //destrutor
 
