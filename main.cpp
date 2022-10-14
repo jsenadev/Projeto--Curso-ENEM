@@ -34,6 +34,9 @@ int main(){
             portuguesPtr->cadMateriasInDisciplina(*materiasPort[i]);
         
         portuguesPtr->printSaida();
+        
+        delete[] portuguesPtr; // deletando ponteiro
+
         }else if(esc1 == 2){
         // DECLARAÇÃO DA MATERIA MATEMATICA
         CursoEnem *matematicaPtr;
@@ -57,6 +60,9 @@ int main(){
             matematicaPtr->cadMateriasInDisciplina(*materiasMat[i]);
         
         matematicaPtr->printSaida();
+
+        delete[] matematicaPtr; // deletando ponteiro
+
     }else if(esc1 == 3){
         // DECLARAÇÃO DA MATERIA BIOLOGIA
         CursoEnem *biologiaPtr;
@@ -78,18 +84,12 @@ int main(){
             biologiaPtr->cadMateriasInDisciplina(*materiasBio[i]);
         
         biologiaPtr->printSaida();
+
+        delete [] biologiaPtr;
+
     }else{
         cout<<"Obrigado e volte sempre!";
     }
-
-    
-
-    //DECLARAÇÃO DA MATERIA MATEMATICA
-
-    
-
-    
-
     
     return 0;
 }
