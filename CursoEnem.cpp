@@ -15,6 +15,13 @@ atividade(false), numAtividadeEnv(0), MAXSIZENAME(15), notaCorte(0){
     numDisciplinas++;
 }
 
+CursoEnem::CursoEnem(const CursoEnem& other)
+:MAXSIZENAME(other.MAXSIZENAME),atividade(other.atividade){
+    this->nomeDisciplina = other.nomeDisciplina;
+    setNumMaterias(other.numMaterias);
+    numDisciplinas++;
+}
+
 CursoEnem::CursoEnem(string named,string namep, int numat, int numatv, float ncorte)
 :MAXSIZENAME(15), atividade(false){
     proxReg = 0;
@@ -29,7 +36,6 @@ CursoEnem::CursoEnem(string named,string namep, int numat, int numatv, float nco
 }
 
 CursoEnem::~CursoEnem(){
-    cout<<"Objeto destruido";
     delete[] histAtPtr;
 
 }
@@ -70,9 +76,18 @@ int CursoEnem::getNumMateriasCad(){
     return numMateriasCad;
 }
 
+
+
 void CursoEnem::printMaterias() const{
     for(int i = 0; i < materias.size(); i++)
         cout<<materias[i] << '\t' << *materias[i] << endl;
+}
+
+void CursoEnem::printLocal(){
+    cout<<"\n\nLocal: "<< escolaCurso.local;
+    cout<<"\nSala: "<< escolaCurso.sala;
+    cout<<"\nAndar: "<< escolaCurso.andar;
+    cout<<"\nNome da Sala: "<<escolaCurso.nome;
 }
 
 void CursoEnem::printSaida(){
@@ -103,8 +118,9 @@ void CursoEnem::printSaida(){
         cout<<"\nHistorico de Atividades: \n";
         printHistAt();
 
-
-        cout<<"\nMaterias de "<<getNomeDisciplina()<<" do professor " <<getNomeProfessor()<<": \n\n";
+        printLocal();
+        cout<<"\n\n";
+        cout<<"Materias de "<<getNomeDisciplina()<<" do professor " <<getNomeProfessor()<<": \n\n";
         
         printMaterias();
 
@@ -142,6 +158,12 @@ void CursoEnem::setNumMaterias(int nmat){
 }
 void CursoEnem::setNumAtividadesEnv(int nummatenv){
     numAtividadeEnv = nummatenv;
+}
+void CursoEnem::setEscolaCurso(string loc, int sl, int ad, string nm){
+    escolaCurso.local = loc;
+    escolaCurso.sala = sl;
+    escolaCurso.andar = ad;
+    escolaCurso.nome = nm;
 }
 
 

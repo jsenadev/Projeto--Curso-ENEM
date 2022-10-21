@@ -5,6 +5,13 @@
 
 using namespace std;
 
+struct Escola{
+    string local;
+    int sala;
+    int andar;
+    string nome;
+};
+
 class CursoEnem{
 
     private:
@@ -17,6 +24,7 @@ class CursoEnem{
     bool atividade; // booleana referente ao envio da atividade
     int numAtividadeEnv; //Número de atividades enviadas em cada disciplina
     vector <string *> materias;
+    
     float notaCorte; //referente a média necessária para passar
     const int MAXSIZENAME;
 
@@ -30,10 +38,13 @@ class CursoEnem{
 
     public:
 
+    Escola escolaCurso; // chamada do Struct dentro da Classe
+
     CursoEnem();
-    CursoEnem(int);
     CursoEnem(string, string, int = 0, int = 0, float = 0.0);
+    CursoEnem(const CursoEnem &); //construtor de copia
     ~CursoEnem(); //destrutor
+    
 
     //getters para retorno das privates
     string getNomeDisciplina();
@@ -49,6 +60,7 @@ class CursoEnem{
     void cadMateriasInDisciplina(const string &);
     void printMaterias() const; //printa as materias de cada disciplina
     void printSaida();
+    void printLocal();
     
 
     //setters para modificação
@@ -58,6 +70,7 @@ class CursoEnem{
     void setAtividade(int, bool=false);
     void setNumMaterias(int);
     void setNotaCorte(float);
+    void setEscolaCurso(string, int, int, string);
     
     
     void cadastrarRegInHist(int);

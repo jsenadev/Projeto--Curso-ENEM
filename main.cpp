@@ -32,10 +32,13 @@ int main(){
 
         portuguesPtr = new CursoEnem("portugues", "Romulo", 7, 3, 756.3);
 
+        portuguesPtr->setEscolaCurso("Bloco A", 401,4,"Alpha");
+
         for(int i = 0; i< materiasPort.size(); i++)
             portuguesPtr->cadMateriasInDisciplina(*materiasPort[i]);
         
         portuguesPtr->printSaida();
+        portuguesPtr->~CursoEnem();
         
         delete[] portuguesPtr; // deletando ponteiro
 
@@ -58,12 +61,16 @@ int main(){
 
         matematicaPtr = new CursoEnem("Matematica", "Israel", 10, 8, 845.56);
 
+        matematicaPtr->setEscolaCurso("Bloco A",206,2,"Beta");
+
         for(int i = 0; i< materiasMat.size(); i++)
             matematicaPtr->cadMateriasInDisciplina(*materiasMat[i]);
         
         matematicaPtr->printSaida();
+        matematicaPtr->~CursoEnem();
 
         delete[] matematicaPtr; // deletando ponteiro
+        
 
     }else if(esc1 == 3){
         // DECLARAÇÃO DA MATERIA BIOLOGIA
@@ -82,16 +89,20 @@ int main(){
 
         biologiaPtr = new CursoEnem("Biologia", "Priscila", 8, 5, 645.23);
 
+        biologiaPtr->setEscolaCurso("Bloco B",116,1,"Omega");
+
         for(int i = 0; i< materiasBio.size(); i++)
             biologiaPtr->cadMateriasInDisciplina(*materiasBio[i]);
         
         biologiaPtr->printSaida();
+        biologiaPtr->~CursoEnem();
 
         delete [] biologiaPtr;
 
     }else{
         cout<<"Obrigado e volte sempre!";
     }
+
     
     return 0;
 }
